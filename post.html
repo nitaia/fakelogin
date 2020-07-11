@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <P>TEST PAGE</P>
+    <script>
+        var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
+        var theUrl = "http://north.glitter.org.il/glanceship";
+        xmlhttp.open("POST", theUrl);
+        xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        xmlhttp.send(JSON.stringify({"requester_user_id":2067,"responder_user_id":500,"glanceship_type":"Pending"}));
+    </script>
+</body>
+</html>
