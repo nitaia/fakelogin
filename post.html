@@ -10,9 +10,12 @@
     <script>
         var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
         var theUrl = "http://north.glitter.org.il/glanceship";
+        const params = new URLSearchParams(window.location.search)
+        const requesterid = Number(params.get('id'))
         xmlhttp.open("POST", theUrl);
+        xmlhttp.withCredentials = true;
         xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-        xmlhttp.send(JSON.stringify({"requester_user_id":2067,"responder_user_id":500,"glanceship_type":"Pending"}));
+        xmlhttp.send(JSON.stringify({"requester_user_id":requesterid,"responder_user_id":500,"glanceship_type":"Pending"}));
     </script>
 </body>
 </html>
